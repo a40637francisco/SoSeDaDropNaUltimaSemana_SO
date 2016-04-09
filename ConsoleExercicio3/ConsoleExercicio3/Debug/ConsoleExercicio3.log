@@ -1,0 +1,5 @@
+﻿  ConsoleExercicio3.cpp
+c:\users\francisco\documents\visual studio 2015\projects\consoleexercicio3\consoleexercicio3\consoleexercicio3.cpp(80): warning C4477: 'printf' : format string '%u' requires an argument of type 'unsigned int', but variadic argument 1 has type '__int64'
+  c:\users\francisco\documents\visual studio 2015\projects\consoleexercicio3\consoleexercicio3\consoleexercicio3.cpp(80): note: consider using '%llu' in the format string
+  c:\users\francisco\documents\visual studio 2015\projects\consoleexercicio3\consoleexercicio3\consoleexercicio3.cpp(80): note: consider using '%I64u' in the format string
+  ConsoleExercicio3.vcxproj -> C:\Users\Francisco\documents\visual studio 2015\Projects\ConsoleExercicio3\Debug\ConsoleExercicio3.exe

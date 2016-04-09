@@ -1,0 +1,4 @@
+﻿  ConsoleExercicio3.cpp
+c:\users\francisco\documents\visual studio 2015\projects\consoleexercicio3\consoleexercicio3\consoleexercicio3.cpp(52): warning C4267: '=': conversion from 'size_t' to 'DWORD', possible loss of data
+c:\users\francisco\documents\visual studio 2015\projects\consoleexercicio3\consoleexercicio3\consoleexercicio3.cpp(41): warning C4101: 'totalSize': unreferenced local variable
+  ConsoleExercicio3.vcxproj -> C:\Users\Francisco\documents\visual studio 2015\Projects\ConsoleExercicio3\x64\Debug\ConsoleExercicio3.exe
