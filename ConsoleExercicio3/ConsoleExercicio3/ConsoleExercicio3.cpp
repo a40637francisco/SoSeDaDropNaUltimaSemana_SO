@@ -59,18 +59,19 @@ int checkMemLeaks(int pid)
 	do
 	{
 		PSAPI_WORKING_SET_INFORMATION info, *wsi;
-		info.NumberOfEntries = 0;
+		
+		PSAPI_WORKING_SET_INFORMATION* wsit = (PSAPI_WORKING_SET_INFORMATION*)malloc(sizeof(PSAPI_WORKING_SET_INFORMATION));
 
-		QueryWorkingSet(process, (LPVOID)&info, sizeof(wsi));
+		QueryWorkingSet(process, (LPVOID)&info, sizeof(&wsi));
 
 		wsSize = sizeof(PSAPI_WORKING_SET_INFORMATION)
 			+ sizeof(PSAPI_WORKING_SET_BLOCK) * info.NumberOfEntries;
-		wsi = (PSAPI_WORKING_SET_INFORMATION*)HeapAlloc(GetProcessHeap(),
-			HEAP_ZERO_MEMORY, wsSize);
+
+		wsi = (PSAPI_WORKING_SET_INFORMATION*)malloc(wsSize);
 
 		if (!QueryWorkingSet(process, (LPVOID)wsi, wsSize)) {
 			printf("%u", GetLastError());
-			return exit("fodeu\n", 1);
+			return exit("it failed\n", 1);
 		}
 
 		totalSize = GetTotalSpace(wsi);
@@ -80,11 +81,12 @@ int checkMemLeaks(int pid)
 		{
 			return exit("memory leak in process\n", 1);
 		}
-		
+
+		free(wsi);
 		Sleep(SLEEP);
 	} while (++count < TIMES);
 
-
+	
 	return exit("closing\n", 0);
 }
 
